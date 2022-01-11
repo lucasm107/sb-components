@@ -11,8 +11,7 @@
     "url": "https://github.com/lucasm107/sb-components"
   },
   "peerDependencies": {
-    "react": ">=16.0.0",
-    "typescript": ">=4.0.0"
+    "react": ">=16.0.0"
   },
   "release": {
     "branches": [
