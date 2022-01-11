@@ -1,20 +1,54 @@
-import './myLabel.css';
+import './mylabel.css';
 
-export interface Props {
+export interface MyLabelProps {
+    /**
+    * Este es el mensaje a mostrar en la etiqueta
+    */
     label: string;
-    size: 'normal' | 'h1' | 'h2' | 'h3';
+    /**
+     * Este es el tamaño de la etiqueta
+    */
+    size: 'normal'|'h1'|'h2'|'h3';
+
+    /**
+     * Si quiere todo capitalizado
+    */
     allCaps?: boolean;
+
+    /**
+     * Colores básicos del botón
+    */
+    color?: 'primary'|'secondary'|'tertiary';
+
+    /**
+     * Color personalizado de la fuente
+    */
+    fontColor?: string;
+
+    /**
+     * Color personalizado de la fuente
+    */
+    backgroundColor?: string;
+
 }
 
-export const MyLabel = ( {
-    label = 'no label',
-    size = 'normal'
-}: Props) => {
 
+
+export const MyLabel = ({
+    allCaps = false,
+    color   = 'primary',
+    label   = 'No Label',
+    size    = 'normal',
+    fontColor,
+    backgroundColor = 'transparent'
+}: MyLabelProps) => {
     return (
-        <span className={`${size}`}>
-            { label }
+        <span 
+            className={`label ${ size } text-${ color }`}
+            style={{ color: fontColor, backgroundColor }}>
+            { allCaps ? label.toUpperCase() : label }
         </span>
     )
-
 }
+
+export default MyLabel;
