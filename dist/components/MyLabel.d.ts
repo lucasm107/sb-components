@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import './mylabel.css';
+import './mylabel_new.css';
 export interface MyLabelProps {
     /**
     * Este es el mensaje a mostrar en la etiqueta
